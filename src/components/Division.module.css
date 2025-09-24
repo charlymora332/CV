@@ -1,0 +1,6 @@
+.division {
+  border: none;          /* quitar el border por defecto */
+  height: 2px;           /* grosor de la línea */
+  background-color: #000000; /* color de la línea */
+  margin: 1.5rem 0;      /* espacio arriba y abajo */
+}
