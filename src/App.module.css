@@ -27,17 +27,21 @@
 }
 
 .ctnGeneral header h1 {
-  font-size: 4rem;
+  /* font-size: 4rem; */
 
 
-  background: linear-gradient(
-    90deg,
-    #ff4d4d,  /* rojo brillante */
-    #ffd325,  /* amarillo vivo */
-    #4d79ff,  /* azul eléctrico */
-    #00ffcc,  /* verde agua */
-    #ff4d4d  /* repetir rojo para transición */
-  );
+  background: linear-gradient(90deg,
+      #ff4d4d,
+      /* rojo brillante */
+      #ffd325,
+      /* amarillo vivo */
+      #4d79ff,
+      /* azul eléctrico */
+      #00ffcc,
+      /* verde agua */
+      #ff4d4d
+      /* repetir rojo para transición */
+    );
   background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -45,19 +49,35 @@
 }
 
 @keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .ctnInfo {
   max-width: 1500px;
+
   display: grid;
   grid-template-columns: 35% 65%;
+  grid-auto-rows: min-content;
+  /* ajusta la altura al contenido */
+
+  gap: 2rem;
+  padding: 1rem;
+
+
+
 
 
 }
-
 
 
 .ctnIzq {
@@ -72,7 +92,8 @@
 
 }
 
-.idiomas span h6,h2 {
+.idiomas span h6,
+h2 {
   margin: 0;
 }
 
@@ -82,13 +103,17 @@
   align-items: center;
 }
 
+.divisionSkills {
+  display: none;
+}
+
 .ctnDer {
   display: flex;
   flex-direction: column;
-  padding: 2rem 3rem ;
+  padding: 2rem 3rem;
   /* gap: 2rem; */
   background-color: #f5f5f5;
-  
+
 
 }
 
@@ -99,88 +124,43 @@
 
 
 
-
-/* Para escritorio ya tienes tu grid: 1fr 2fr */
+/* Móvil: apilar todo vertical y reordenar */
 @media (max-width: 768px) {
   .ctnInfo {
-    grid-template-columns: 1fr; /* apilar todo */
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
   }
 
-  /* Reordenar bloques */
-  #sobre-mi {
+  :global(#sobre-mi) {
     order: 1;
   }
 
-  #skills {
+  :global(#skills) {
     order: 2;
   }
 
-  #contacto {
+  :global(#idiomas) {
     order: 3;
   }
 
-  #idiomas {
+  :global(#contacto) {
     order: 4;
   }
 
-  #educacion {
+  :global(#educacion) {
     order: 5;
   }
 
-  #proyectos {
+  :global(#proyectos) {
     order: 6;
   }
 
-  #experiencia {
+  :global(#experiencia) {
     order: 7;
   }
 
-  /* Asegurar que las columnas ocupen 100% del ancho */
-  .cv-sidebar,
-  .cv-main {
-    width: 100%;
+  .divisionSkills {
+    display: block;
   }
-}
-
-
-
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
