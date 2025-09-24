@@ -1,5 +1,4 @@
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 import css from "./App.module.css";
 import LinksContacto from "./components/LinksContacto";
 import socialLinks from "./assets/imgenesContacto/imgContacto";
