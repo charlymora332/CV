@@ -8,7 +8,7 @@ function LinksContacto({ img, text, url }) {
         <img src={img} alt="icono contacto" />
       </div>
 
-      <a href={url}>{text} </a>
+      <a href={url} target="_blank">{text} </a>
     </div>
   );
 }
